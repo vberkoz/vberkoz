@@ -1,0 +1,143 @@
+---
+import { Badge } from "@/components/ui/badge";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const projects = [
+    {
+        id: 1,
+        title: "Driver-Sync",
+        description:
+            "Web and mobile app designed to manage truck driver pre-trip inspections",
+        image: "/placeholder.svg",
+        tags: ["React", "TypeScript", "Express", "AWS", "React Native"],
+        role: "Full-Stack Developer",
+        year: "2025",
+        company: "Pretty Solution",
+        companyUrl: "https://prettysolution.com"
+    },
+    {
+        id: 2,
+        title: "Cortex-Analytics",
+        description:
+            "Healthcare management system with advanced analytics features",
+        image: "/placeholder.svg",
+        tags: ["Angular", "NestJS", "TypeORM", "PostgreSQL", "AWS"],
+        role: "Full-Stack Developer",
+        year: "2023-2024",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 3,
+        title: "Car-Keeper",
+        description: "Mobile application for managing car collections",
+        image: "/placeholder.svg",
+        tags: ["Figma", "React Native", "Expo", "AWS"],
+        role: "Full-Stack Developer",
+        year: "2023",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 4,
+        title: "VOGroup",
+        description: "Website for a sales and marketing organization",
+        image: "/placeholder.svg",
+        tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+        role: "Full-Stack Developer",
+        year: "2023",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 5,
+        title: "VPlus",
+        description: "E-commerce website for selling groceries",
+        image: "/placeholder.svg",
+        tags: ["Full-Stack", "Database", "UI Components"],
+        role: "Full-Stack Developer",
+        year: "2020",
+        company: "Independent Contractor",
+    },
+    {
+        id: 6,
+        title: "Cortex-Knowledge",
+        description: "Document management system with payment processing",
+        image: "/placeholder.svg",
+        tags: ["Docker", "Node.js", "Express.js", "Stripe"],
+        role: "DevOps & Back-End Developer",
+        year: "2019-2020",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+];
+
+const pageTitle = "Projects";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <section class="text-center space-y-4 mb-12 animate-slide-down">
+            <h1 class="text-4xl font-bold">Projects</h1>
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                A selection of projects I've worked on throughout my career.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up">
+            {
+                projects.map((project) => (
+                    <Card
+                        key={project.id}
+                        className="overflow-hidden border border-border hover:shadow-md transition-shadow"
+                    >
+                        <CardHeader className="pb-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <CardTitle>{project.title}</CardTitle>
+                                    <CardDescription className="text-sm text-muted-foreground mt-1">
+                                        {project.companyUrl ? (
+                                            <a 
+                                                href={project.companyUrl} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                class="hover:underline"
+                                            >
+                                                {project.company}
+                                            </a>
+                                        ) : (
+                                            project.company
+                                        )} | {project.year}
+                                    </CardDescription>
+                                </div>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="pb-4">
+                            <p class="text-muted-foreground mb-4">
+                                {project.description}
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                    <Badge
+                                        key={tag}
+                                        variant="secondary"
+                                        className="font-normal"
+                                    >
+                                        {tag}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))
+            }
+        </div>
+    </div>
+</BaseLayout>

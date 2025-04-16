@@ -1,0 +1,100 @@
+---
+import Hamburger from "./Hamburger.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+const { pathname } = Astro.url;
+const links = [
+    { to: "/", label: "About" },
+    { to: "/projects", label: "Projects" },
+    { to: "/blog", label: "Blog" },
+    { to: "/contact", label: "Contact" },
+];
+---
+
+<header class="fixed w-full backdrop-blur-sm bg-background/80 border-b z-50">
+    <nav
+        class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+    >
+        <div class="flex">
+            <a href="/" class="-m-1.5 p-1.5 flex items-center">
+                <span class="sr-only">Vasyl Berkoz</span>
+                <span class="text-xl font-semibold">Vasyl Berkoz</span>
+            </a>
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-8">
+            {
+                links.map((link) => (
+                    <a
+                        href={link.to}
+                        class={`text-sm font-medium transition-colors hover:text-primary relative py-2 ${link.to === pathname ? "text-primary" : "text-muted-foreground"}`}
+                    >
+                        {link.label}
+                        {link.to === pathname && (
+                            <span class="absolute inset-x-0 -bottom-px h-px bg-primary" />
+                        )}
+                    </a>
+                ))
+            }
+        </div>
+
+        <div class="flex items-center">
+            <ThemeIcon />
+            <Hamburger />
+        </div>
+    </nav>
+    
+    <!-- Mobile menu, show/hide based on menu open state -->
+    <div id="mobile-menu" class="lg:hidden hidden h-[216px]">
+        <div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+                <a href="/" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Vasyl Berkoz</span>
+                    <span class="text-xl font-semibold">Vasyl Berkoz</span>
+                </a>
+                <button id="close-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-muted-foreground">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        {links.map((link) => (
+                            <a
+                                href={link.to}
+                                class={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                                    link.to === pathname ? "text-primary" : "text-muted-foreground hover:bg-muted"
+                                }`}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // JavaScript to toggle mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeButton = document.getElementById('close-menu');
+        
+        hamburger?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+        
+        closeButton?.addEventListener('click', () => {
+            mobileMenu?.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+    });
+</script>

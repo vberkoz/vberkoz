@@ -1,0 +1,82 @@
+---
+import { Button } from "@/components/ui/button";
+import BaseLayout from "./BaseLayout.astro";
+import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import "../styles/markdown.css";
+import { getCollection } from 'astro:content';
+import { calculateReadTime } from "@/lib/readTime";
+
+const { frontmatter } = Astro.props;
+const allPosts = await getCollection('blog');
+const specificPost = allPosts.find(post => post.data.title === frontmatter.title);
+
+const post = {
+        ...specificPost,
+        readTime: calculateReadTime(specificPost?.body || ""),
+        formattedDate: new Date(specificPost!.data.pubDate).toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        }
+    ),
+};
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <div class="px-4 sm:px-6 max-w-3xl mx-auto py-16 animate-fade-in">
+        <div class="mb-6">
+            <Button
+                variant="ghost"
+                asChild
+                className="mb-4 -ml-2 text-muted-foreground hover:text-foreground"
+            >
+                <a href="/blog" class="flex items-center gap-2">
+                    <ArrowLeft className="h-4 w-4" />
+                    Back to blog
+                </a>
+            </Button>
+
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 mt-4">
+                {frontmatter.title}
+            </h1>
+
+            <div
+                class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-6"
+            >
+                <div class="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{post.formattedDate}</span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    <span>{post.readTime}</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1">
+                    <Tag className="h-4 w-4" />
+                    {frontmatter.tags.map((tag: string) => (
+                        <span class="inline-block text-sm font-medium py-1 px-2 bg-secondary text-secondary-foreground rounded-md whitespace-nowrap">
+                            <a href={`/tags/${tag}`}>
+                                {tag}
+                            </a>
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        <Separator className="my-6" />
+
+        <div class="prose prose-lg dark:prose-invert max-w-none prose-p:mb-6">
+            <p class="text-lg leading-relaxed mb-6">
+                {frontmatter.description}
+            </p>
+
+            <slot />
+        </div>
+    </div>
+</BaseLayout>

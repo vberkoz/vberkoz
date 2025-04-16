@@ -1,0 +1,196 @@
+---
+import { Button } from "@/components/ui/button";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { ArrowRight, Mail } from "lucide-react";
+const pageTitle = "About";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-12">
+        <section class="text-center space-y-4 animate-slide-down">
+            <h1 class="text-4xl md:text-5xl font-bold">Vasyl Berkoz</h1>
+            <p class="text-xl md:text-2xl text-muted-foreground">
+                Full-Stack Developer
+            </p>
+            <div class="flex justify-center gap-4 pt-4">
+                <a
+                    href="mailto:vberkoz@gmail.com"
+                    class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                    <Mail className="h-4 w-4" />
+                    vberkoz@gmail.com
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/vasyl-berkoz-224a8bb0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <section class="space-y-6 animate-slide-up">
+            <h2 class="text-2xl font-semibold">Professional Summary</h2>
+            <p class="text-muted-foreground leading-relaxed">
+                Frontend-focused Full-Stack Developer with strong experience
+                delivering modern, performant web and mobile applications.
+                Passionate about building clean, scalable UIs using tools like
+                React, TanStack, Angular, Vite, and Astro. Adept with backend
+                APIs in Node.js, Express.js, and NestJS, and comfortable working
+                with AWS infrastructure (Route 53, CloudFront, Cognito, S3,
+                Lambda, API Gateway, DynamoDB, RDS). Proven track record of
+                contributing to complex projects across logistics, healthcare,
+                e-commerce, and job platforms.
+            </p>
+        </section>
+
+        <section class="space-y-6 animate-slide-up">
+            <h2 class="text-2xl font-semibold">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <h3 class="font-medium">Front-End</h3>
+                    <p class="text-muted-foreground">
+                        React, Angular, Astro, Vite, TanStack (Query, Router, Form, Table), Tailwind CSS, Shadcn, Figma
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium">Cloud Services</h3>
+                    <p class="text-muted-foreground">
+                        Route 53, CloudFront, Certificate Manager, Cognito, S3, API Gateway, Lambda, DynamoDB, RDS, IAM
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium">Back-End</h3>
+                    <p class="text-muted-foreground">
+                        Node.js, Express.js, NestJS, TypeORM
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium">Databases</h3>
+                    <p class="text-muted-foreground">
+                        PostgreSQL, SQL Server, DynamoDB, AWS RDS
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium">Mobile Development</h3>
+                    <p class="text-muted-foreground">React Native, Expo</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="font-medium">Other Tools</h3>
+                    <p class="text-muted-foreground">Docker, Stripe, Vercel</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6 animate-slide-up">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-semibold">Recent Experience</h2>
+                <a href="/projects">
+                    <Button variant="link" className="flex items-center gap-1">
+                        View Projects <ArrowRight className="h-4 w-4" />
+                    </Button>
+                </a>
+            </div>
+
+            <div class="space-y-8">
+                <div class="space-y-3 border-l-2 border-muted pl-6 relative">
+                    <div
+                        class="absolute left-[-8px] top-1 w-3.5 h-3.5 bg-primary rounded-full"
+                    >
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Full-Stack Developer</h3>
+                        <p class="text-sm text-muted-foreground">
+                            <a href="https://vf-soft.com/" class="hover:underline" target="_blank" >VF&Soft</a> / <a href="https://prettysolution.com/" class="hover:underline" target="_blank" >Pretty Solution</a> | January 2025 - Present
+                        </p>
+                    </div>
+                    <p class="text-muted-foreground">
+                        <span class="highlight">Project: Driver-Sync</span> - Developed
+                        new features and created database schemas for a web and mobile
+                        app designed to manage truck driver pre-trip inspections.
+                        Built user interfaces using Vite, React, TypeScript, TanStack,
+                        Express.js, Shadcn, React Native, Expo, Cognito, AWS S3,
+                        API Gateway, Lambda, and DynamoDB.
+                    </p>
+                </div>
+
+                <div class="space-y-3 border-l-2 border-muted pl-6 relative">
+                    <div
+                        class="absolute left-[-8px] top-1 w-3.5 h-3.5 bg-primary rounded-full"
+                    >
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Full-Stack Developer</h3>
+                        <p class="text-sm text-muted-foreground">
+                            <a href="https://vf-soft.com/" class="hover:underline" target="_blank" >VF&Soft</a> | November 2023 - December 2024
+                        </p>
+                    </div>
+                    <p class="text-muted-foreground">
+                        <span class="highlight">Project: Cortex-Analytics</span>
+                        - Led new feature development, fixed legacy code, and created
+                        database schemas using Angular, NestJS, TypeORM, PostgreSQL,
+                        SQL Server, AWS S3, Cognito, RDS, and IAM. Engaged in tasks
+                        estimation and client conversations to ensure project alignment
+                        with business goals.
+                    </p>
+                </div>
+
+                <div class="space-y-3 border-l-2 border-muted pl-6 relative">
+                    <div
+                        class="absolute left-[-8px] top-1 w-3.5 h-3.5 bg-primary rounded-full"
+                    >
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Full-Stack Developer</h3>
+                        <p class="text-sm text-muted-foreground">
+                            <a href="https://vf-soft.com/" class="hover:underline" target="_blank" >VF&Soft</a> | October 2023 - December 2023
+                        </p>
+                    </div>
+                    <p class="text-muted-foreground">
+                        <span class="highlight">Project: Car-Keeper</span> - Designed
+                        mobile screens using Figma and developed new features using
+                        React Native, Expo, AWS S3, API Gateway, Lambda, and DynamoDB.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6 animate-slide-up text-center">
+            <h2 class="text-2xl font-semibold">Education</h2>
+            <div>
+                <h3 class="font-medium">
+                    Bachelor's Degree in Computer Science
+                </h3>
+                <p class="text-muted-foreground">
+                    Yuriy Fedkovych Chernivtsi National University | 2001 - 2006
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-6 animate-slide-up text-center">
+            <h2 class="text-2xl font-semibold">Languages</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div>
+                    <span class="font-medium">English</span>
+                    <p class="text-sm text-muted-foreground">Proficient</p>
+                </div>
+                <div>
+                    <span class="font-medium">Ukrainian</span>
+                    <p class="text-sm text-muted-foreground">Native</p>
+                </div>
+                <div>
+                    <span class="font-medium">Polish</span>
+                    <p class="text-sm text-muted-foreground">B1 Level</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-center pt-4">
+            <a href="/contact">
+                <Button>Get in touch</Button>
+            </a>
+        </div>
+    </div>
+</BaseLayout>

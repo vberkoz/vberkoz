@@ -1,0 +1,42 @@
+---
+import { Github, Linkedin, Mail } from "lucide-react";
+---
+
+<footer class="border-t bg-muted/40 mt-auto">
+    <div class="max-w-7xl mx-auto py-12 px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-col items-center md:items-start">
+                <p class="text-muted-foreground text-sm">
+                    &copy; {new Date().getFullYear()} Vasyl Berkoz. All rights reserved.
+                </p>
+            </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a
+                    href="https://github.com/vberkoz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="GitHub"
+                >
+                    <Github className="h-5 w-5" />
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/vasyl-berkoz-224a8bb0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="LinkedIn"
+                >
+                    <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                    href="mailto:vberkoz@gmail.com"
+                    class="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="Email"
+                >
+                    <Mail className="h-5 w-5" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
