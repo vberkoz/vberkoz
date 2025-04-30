@@ -2,10 +2,18 @@
 import { Button } from "@/components/ui/button";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { ArrowRight, Mail } from "lucide-react";
-const pageTitle = "About";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+    pageTitle="About"
+    pageDescription="Professional portfolio of Vasyl Berkoz, a Frontend-focused Full-Stack Developer with experience in React, TanStack, Angular, and AWS infrastructure."
+    pageKeywords="Vasyl Berkoz, Full-Stack Developer, React, TanStack, Angular, Vite, Astro, AWS, Frontend Developer"
+    pageAuthor="Vasyl Berkoz"
+    pageOgTitle="Vasyl Berkoz | Full-Stack Developer Portfolio"
+    pageOgDescription="Experienced Full-Stack Developer specializing in modern web and mobile applications using React, TanStack, Angular, and AWS."
+    pageOgUrl="https://vberkoz.com/"
+    pageOgType="website"
+>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-12">
         <section class="text-center space-y-4 animate-slide-down">
             <h1 class="text-4xl md:text-5xl font-bold">Vasyl Berkoz</h1>

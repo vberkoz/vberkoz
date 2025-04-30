@@ -30,7 +30,7 @@ const links = [
                         class={`text-sm font-medium transition-colors hover:text-primary relative py-2 ${link.to === pathname ? "text-primary" : "text-muted-foreground"}`}
                     >
                         {link.label}
-                        {link.to === pathname && (
+                        {(link.to === pathname || (link.to !== "/" && pathname.startsWith(link.to))) && (
                             <span class="absolute inset-x-0 -bottom-px h-px bg-primary" />
                         )}
                     </a>

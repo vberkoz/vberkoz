@@ -25,7 +25,16 @@ const post = {
 };
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout
+    pageTitle={frontmatter.title}
+    pageDescription={frontmatter.description}
+    pageKeywords={frontmatter.tags.join(', ')}
+    pageAuthor={frontmatter.author}
+    pageOgTitle={frontmatter.title}
+    pageOgDescription={frontmatter.description}
+    pageOgUrl={frontmatter.url}
+    pageOgType={frontmatter.type}
+>
     <div class="px-4 sm:px-6 max-w-3xl mx-auto py-16 animate-fade-in">
         <div class="mb-6">
             <Button

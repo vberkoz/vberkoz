@@ -2,7 +2,16 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+const {
+    pageTitle,
+    pageDescription,
+    pageKeywords,
+    pageAuthor,
+    pageOgTitle,
+    pageOgDescription,
+    pageOgUrl,
+    pageOgType
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -11,7 +20,15 @@ const { pageTitle } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
+        <title>{pageTitle} | Vasyl Berkoz</title>
+        <meta name="description" content={pageDescription}>
+        <meta name="keywords" content={pageKeywords}>
+        <meta name="author" content={pageAuthor}>
+        <meta property="og:title" content={pageOgTitle}>
+        <meta property="og:description" content={pageOgDescription}>
+        <meta property="og:type" content={pageOgType}>
+        <meta property="og:url" content={pageOgUrl}>
+        <link rel="canonical" href={pageOgUrl}>
     </head>
     <body class="min-h-screen flex flex-col">
         <Header />

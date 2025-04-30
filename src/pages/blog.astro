@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
 import "../styles/global.css";
 import { getCollection } from "astro:content";
 import { Card } from "@/components/ui/card";
@@ -8,7 +7,6 @@ import { ArrowRight } from "lucide-react";
 import { calculateReadTime } from "@/lib/readTime";
 import { Badge } from "@/components/ui/badge";
 
-const pageTitle = "Blog";
 const allPosts = await getCollection("blog");
 const postsWithReadTime = allPosts.map((post) => {
     // Format the date
@@ -30,7 +28,16 @@ const postsWithReadTime = allPosts.map((post) => {
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+    pageTitle="Blog"
+    pageDescription="Explore insightful articles and tutorials about web development, programming best practices, and emerging technologies."
+    pageKeywords="Web Development, Programming, JavaScript, React, TypeScript, Software Engineering, Coding Tutorials, Tech Blog"
+    pageAuthor="Vasyl Berkoz"
+    pageOgTitle="Blog | Vasyl Berkoz"
+    pageOgDescription="Read articles about web development, programming tutorials, and tech insights from Vasyl Berkoz."
+    pageOgUrl="https://vberkoz.com/blog"
+    pageOgType="website"
+>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <section class="text-center space-y-4 mb-12 animate-slide-down">
             <h1 class="text-4xl font-bold">Blog</h1>

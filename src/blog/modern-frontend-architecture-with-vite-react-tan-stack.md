@@ -1,12 +1,16 @@
 ---
 title: 'Modern Frontend Architecture with Vite, React & TanStack'
-pubDate: 2025-04-01
+pubDate: 2025-03-31
 description: 'Learn how to build a modern, scalable frontend architecture using Vite, React, and TanStack tools (Query, Router, Form, and Table). In this guide, I’ll share my go-to setup, folder structure, best practices, and code snippets for fast, maintainable web apps.'
 author: 'Vasyl Berkoz'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+    url: ''
+    alt: ''
 tags: ["vite", "react", "tanstack", "frontend-architecture", "webdev", "typescript", "developer-blog"]
+og_title: "Modern Frontend Architecture with Vite, React & TanStack"
+og_description: "Explore how to use Vite, React, and the TanStack suite to architect scalable, maintainable frontend applications."
+og_type: "article"
+og_url: "https://vberkoz.com/posts/modern-frontend-architecture-with-vite-react-tan-stack"
 ---
 
 ### **Introduction**
