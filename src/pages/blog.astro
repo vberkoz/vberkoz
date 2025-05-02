@@ -8,7 +8,13 @@ import { calculateReadTime } from "@/lib/readTime";
 import { Badge } from "@/components/ui/badge";
 
 const allPosts = await getCollection("blog");
-const postsWithReadTime = allPosts.map((post) => {
+
+// Sort posts by date (most recent first)
+const sortedPosts = allPosts.sort((a, b) => 
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const postsWithReadTime = sortedPosts.map((post) => {
     // Format the date
     const formattedDate = new Date(post.data.pubDate).toLocaleDateString(
         "en-US",
