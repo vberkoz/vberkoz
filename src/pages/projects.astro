@@ -13,6 +13,7 @@ const projects = [
     {
         id: 1,
         title: "Driver-Sync",
+        url: "http://driversync-astro.s3-website-eu-west-1.amazonaws.com/",
         description:
             "Web and mobile app designed to manage truck driver pre-trip inspections",
         image: "/placeholder.svg",
@@ -24,7 +25,19 @@ const projects = [
     },
     {
         id: 2,
-        title: "Cortex-Analytics",
+        title: "Cortex-Analytics Website",
+        url: "https://blog.cortexdev.cortexanalytics.com/",
+        description: "Website for Cortex-Analytics team and product",
+        image: "/placeholder.svg",
+        tags: ["Astro", "React", "Tailwind CSS", "TypeScript", "AWS"],
+        role: "Frontent Developer",
+        year: "2023",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 3,
+        title: "Cortex-Analytics App",
         description:
             "Healthcare management system with advanced analytics features",
         image: "/placeholder.svg",
@@ -34,20 +47,21 @@ const projects = [
         company: "VF&Soft",
         companyUrl: "https://vf-soft.com"
     },
-    {
-        id: 3,
-        title: "Car-Keeper",
-        description: "Mobile application for managing car collections",
-        image: "/placeholder.svg",
-        tags: ["Figma", "React Native", "Expo", "AWS"],
-        role: "Full-Stack Developer",
-        year: "2023",
-        company: "VF&Soft",
-        companyUrl: "https://vf-soft.com"
-    },
+    // {
+    //     id: 3,
+    //     title: "Car-Keeper",
+    //     description: "Mobile application for managing car collections",
+    //     image: "/placeholder.svg",
+    //     tags: ["Figma", "React Native", "Expo", "AWS"],
+    //     role: "Full-Stack Developer",
+    //     year: "2023",
+    //     company: "VF&Soft",
+    //     companyUrl: "https://vf-soft.com"
+    // },
     {
         id: 4,
         title: "VOGroup",
+        url: "https://vogroup.vercel.app/",
         description: "Website for a sales and marketing organization",
         image: "/placeholder.svg",
         tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
@@ -108,7 +122,20 @@ const projects = [
                         <CardHeader className="pb-2">
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <CardTitle>{project.title}</CardTitle>
+                                    <CardTitle>
+                                        {project.url ? (
+                                            <a 
+                                                href={project.url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                class="hover:underline"
+                                            >
+                                                {project.title}
+                                            </a>
+                                        ) : (
+                                            project.title
+                                        )}
+                                    </CardTitle>
                                     <CardDescription className="text-sm text-muted-foreground mt-1">
                                         {project.companyUrl ? (
                                             <a 
