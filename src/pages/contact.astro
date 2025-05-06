@@ -18,139 +18,86 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
         <section class="text-center space-y-4 mb-12 animate-slide-down">
             <h1 class="text-4xl font-bold">Contact Me</h1>
             <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Have a project in mind or just want to chat? Feel free to reach
-                out.
+                Have a project in mind or just want to chat? Feel free to reach out through any of the channels below.
             </p>
         </section>
 
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-12 animate-slide-up"
-        >
-            <div class="space-y-8">
+        <div class="max-w-2xl mx-auto animate-slide-up">
+            <div class="space-y-10">
                 <div>
-                    <h2 class="text-2xl font-semibold mb-6">
+                    <h2 class="text-2xl font-semibold mb-6 text-center">
                         Get in Touch
                     </h2>
-                    <div class="space-y-4">
+                    <div class="space-y-6 bg-card p-8 rounded-lg border shadow-sm">
                         <div class="flex items-center space-x-2">
                             <Mail
-                                className="h-5 w-5 mr-3 text-muted-foreground"
+                                className="h-6 w-6 mr-4 text-primary"
                             />
-                            <a
-                                href="mailto:vberkoz@gmail.com"
-                                class="text-muted-foreground hover:text-foreground transition-colors"
-                                >vberkoz@gmail.com</a
-                            >
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <a
+                                    href="mailto:vberkoz@gmail.com"
+                                    class="text-muted-foreground hover:text-foreground transition-colors"
+                                >vberkoz@gmail.com</a>
+                            </div>
                         </div>
                         <div class="flex items-center space-x-2">
                             <Linkedin
-                                className="h-5 w-5 mr-3 text-muted-foreground"
+                                className="h-6 w-6 mr-4 text-primary"
                             />
-                            <a
-                                href="https://www.linkedin.com/in/vasyl-berkoz-224a8bb0/"
-                                class="text-muted-foreground hover:text-foreground transition-colors"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >linkedin.com/in/vasyl-berkoz</a
-                            >
+                            <div>
+                                <p class="font-medium">LinkedIn</p>
+                                <a
+                                    href="https://www.linkedin.com/in/vasyl-berkoz-224a8bb0/"
+                                    class="text-muted-foreground hover:text-foreground transition-colors"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >linkedin.com/in/vasyl-berkoz</a>
+                            </div>
                         </div>
                         <div class="flex items-center space-x-2">
                             <Github
-                                className="h-5 w-5 mr-3 text-muted-foreground"
+                                className="h-6 w-6 mr-4 text-primary"
                             />
-                            <a
-                                href="https://github.com/vberkoz"
-                                class="text-muted-foreground hover:text-foreground transition-colors"
-                                target="_blank"
-                                rel="noopener noreferrer">github.com/vberkoz</a
-                            >
+                            <div>
+                                <p class="font-medium">GitHub</p>
+                                <a
+                                    href="https://github.com/vberkoz"
+                                    class="text-muted-foreground hover:text-foreground transition-colors"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >github.com/vberkoz</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h2 class="text-2xl font-semibold mb-6">Languages</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="font-medium mr-2">English:</span>
-                            <span class="text-muted-foreground"
-                                >Proficient</span
-                            >
+                    <h2 class="text-2xl font-semibold mb-6 text-center">Languages</h2>
+                    <div class="grid grid-cols-3 gap-4 text-center bg-card p-8 rounded-lg border shadow-sm">
+                        <div class="space-y-2">
+                            <p class="font-medium">English</p>
+                            <p class="text-muted-foreground">Proficient</p>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <span class="font-medium mr-2">Ukrainian:</span>
-                            <span class="text-muted-foreground">Native</span
-                            >
+                        <div class="space-y-2">
+                            <p class="font-medium">Ukrainian</p>
+                            <p class="text-muted-foreground">Native</p>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <span class="font-medium mr-2">Polish:</span>
-                            <span class="text-muted-foreground"
-                                >B1 Level</span
-                            >
+                        <div class="space-y-2">
+                            <p class="font-medium">Polish</p>
+                            <p class="text-muted-foreground">B1 Level</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="space-y-6">
-                <h2 class="text-2xl font-semibold">Send a Message</h2>
                 
-                <form class="space-y-4">
-                    <div class="grid grid-cols-1 gap-4">
-                        <div class="space-y-2">
-                            <label for="name" class="text-sm font-medium">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your name"
-                                class="w-full px-3 py-2 border rounded-md bg-background"
-                                required
-                            />
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="email" class="text-sm font-medium">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your email address"
-                                class="w-full px-3 py-2 border rounded-md bg-background"
-                                required
-                            />
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="subject" class="text-sm font-medium">Subject</label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                placeholder="What is this regarding?"
-                                class="w-full px-3 py-2 border rounded-md bg-background"
-                                required
-                            />
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label for="message" class="text-sm font-medium">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="Your message"
-                                class="w-full px-3 py-2 border rounded-md bg-background resize-none"
-                                required
-                            ></textarea>
-                        </div>
-                    </div>
-                    
-                    <Button type="submit" className="w-full">
-                        Send Message
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                </form>
+                <div class="flex justify-center pt-6">
+                    <a href="/">
+                        <Button variant="outline" className="flex items-center gap-2">
+                            <ArrowRight className="h-4 w-4 rotate-180" />
+                            Back to Home
+                        </Button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
