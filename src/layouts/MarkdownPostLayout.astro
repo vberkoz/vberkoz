@@ -1,20 +1,22 @@
 ---
 import { Button } from "@/components/ui/button";
 import BaseLayout from "./BaseLayout.astro";
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock, Tag, History } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import "../styles/markdown.css";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import { calculateReadTime } from "@/lib/readTime";
 
 const { frontmatter } = Astro.props;
-const allPosts = await getCollection('blog');
-const specificPost = allPosts.find(post => post.data.title === frontmatter.title);
+const allPosts = await getCollection("blog");
+const specificPost = allPosts.find(
+    (post) => post.data.title === frontmatter.title
+);
 
 const post = {
-        ...specificPost,
-        readTime: calculateReadTime(specificPost?.body || ""),
-        formattedDate: new Date(specificPost!.data.pubDate).toLocaleDateString(
+    ...specificPost,
+    readTime: calculateReadTime(specificPost?.body || ""),
+    formattedPubDate: new Date(specificPost!.data.pubDate).toLocaleDateString(
         "en-US",
         {
             year: "numeric",
@@ -22,13 +24,22 @@ const post = {
             day: "numeric",
         }
     ),
+    formattedUpdatedDate: specificPost?.data.updatedDate ? new Date(specificPost.data.updatedDate).toLocaleDateString(
+        "en-US",
+        {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        }
+    )
+: null
 };
 ---
 
 <BaseLayout
     pageTitle={frontmatter.title}
     pageDescription={frontmatter.description}
-    pageKeywords={frontmatter.tags.join(', ')}
+    pageKeywords={frontmatter.tags.join(", ")}
     pageAuthor={frontmatter.author}
     pageOgTitle={frontmatter.title}
     pageOgDescription={frontmatter.description}
@@ -56,9 +67,16 @@ const post = {
                 class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-6"
             >
                 <div class="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{post.formattedDate}</span>
+                    <CalendarDays className="h-4 w-4" />
+                    <span>Published {post.formattedPubDate}</span>
                 </div>
+
+                {post.data?.updatedDate && (
+                    <div class="flex items-center gap-1">
+                        <History className="h-4 w-4" />
+                        <span>Updated {post.formattedUpdatedDate}</span>
+                    </div>
+                )}
 
                 <div class="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
@@ -67,13 +85,13 @@ const post = {
 
                 <div class="flex flex-wrap items-center gap-1">
                     <Tag className="h-4 w-4" />
-                    {frontmatter.tags.map((tag: string) => (
-                        <span class="inline-block text-sm font-medium py-1 px-2 bg-secondary text-secondary-foreground rounded-md whitespace-nowrap">
-                            <a href={`/tags/${tag}`}>
-                                {tag}
-                            </a>
-                        </span>
-                    ))}
+                    {
+                        frontmatter.tags.map((tag: string) => (
+                            <span class="inline-block text-sm font-medium py-1 px-2 bg-secondary text-secondary-foreground rounded-md whitespace-nowrap">
+                                <a href={`/tags/${tag}`}>{tag}</a>
+                            </span>
+                        ))
+                    }
                 </div>
             </div>
         </div>

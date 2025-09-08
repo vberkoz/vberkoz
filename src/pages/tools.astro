@@ -1,0 +1,140 @@
+---
+import { Badge } from "@/components/ui/badge";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const projects = [
+    {
+        id: 0,
+        title: "TextCase",
+        url: "https://textcase.vberkoz.com/",
+        github: "https://github.com/vberkoz/textcase",
+        description: "Text case conversion online tool that allows users to transform text between various case formats",
+        image: "/placeholder.svg",
+        tags: ["Astro", "AWS CDK"],
+        role: "Full-Stack Developer",
+        year: "2025",
+    },
+    {
+        id: 1,
+        title: "TextClean",
+        url: "https://textclean.vberkoz.com/",
+        github: "https://github.com/vberkoz/textclean",
+        description: "Cleaning and formatting text online tool with a variety of transformation options",
+        image: "/placeholder.svg",
+        tags: ["Astro", "AWS CDK"],
+        role: "Full-Stack Developer",
+        year: "2025",
+    },
+    {
+        id: 2,
+        title: "Bitburner",
+        url: "https://bitburner.vberkoz.com/",
+        github: "https://github.com/serverless-solution/privnote-front",
+        description: "Send Messages That Disappear Without a Trace",
+        image: "/placeholder.svg",
+        tags: ["Astro", "AWS CDK"],
+        role: "Full-Stack Developer",
+        year: "2025",
+    },
+];
+---
+
+<BaseLayout
+    pageTitle="Projects"
+    pageDescription="Explore a selection of projects by Vasyl Berkoz, including web and mobile applications for logistics, healthcare, and e-commerce."
+    pageKeywords="Vasyl Berkoz, Projects, Portfolio, React, TypeScript, Angular, NestJS, AWS, React Native, Full-Stack Developer"
+    pageAuthor="Vasyl Berkoz"
+    pageOgTitle="Projects | Vasyl Berkoz"
+    pageOgDescription="View a collection of professional projects by Vasyl Berkoz, showcasing expertise in React, Angular, AWS, and mobile development."
+    pageOgUrl="https://vberkoz.com/projects"
+    pageOgType="website"
+>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <section class="text-center space-y-4 mb-12 animate-slide-down">
+            <h1 class="text-4xl font-bold">Tools</h1>
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Online tools I created to help myself and others with daily tasks.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up">
+            {
+                projects.map((project) => (
+                    <Card
+                        key={project.id}
+                        className="overflow-hidden border border-border hover:shadow-md transition-shadow"
+                    >
+                        <CardHeader className="pb-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <CardTitle>
+                                        {project.url ? (
+                                            <a 
+                                                href={project.url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                class="hover:underline"
+                                            >
+                                                {project.title}
+                                            </a>
+                                        ) : (
+                                            project.title
+                                        )}
+                                    </CardTitle>
+                                    <CardDescription className="text-sm text-muted-foreground mt-1">
+                                        {project.year}
+                                    </CardDescription>
+                                </div>
+                                <div class="flex space-x-1">
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-muted-foreground rounded-md p-1 hover:text-primary hover:bg-accent"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                        </a>
+                                    )}
+                                    {project.url && (
+                                        <a
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-muted-foreground rounded-md p-1 hover:text-primary hover:bg-accent"
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link-icon lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="pb-4">
+                            <p class="text-muted-foreground mb-4">
+                                {project.description}
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                    <Badge
+                                        key={tag}
+                                        variant="secondary"
+                                        className="font-normal"
+                                    >
+                                        {tag}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))
+            }
+        </div>
+    </div>
+</BaseLayout>

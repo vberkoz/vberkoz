@@ -8,6 +8,7 @@ const blog = defineCollection({
     schema: z.object({
       title: z.string(),
       pubDate: z.date(),
+      updatedDate: z.date().optional(),
       description: z.string(),
       author: z.string(),
       image: z.object({
@@ -17,5 +18,17 @@ const blog = defineCollection({
       tags: z.array(z.string())
     })
 });
-// Export a single `collections` object to register your collection(s)
-export const collections = { blog };
+
+const privacyPolicy = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content" }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.date(),
+    og_title: z.string(),
+    og_description: z.string(),
+    og_type: z.string(),
+    og_url: z.string(),
+  })
+});
+
+export const collections = { blog, privacyPolicy };
