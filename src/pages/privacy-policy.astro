@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getEntry, render } from 'astro:content';
+import "../styles/markdown.css";
+
+const privacyPolicy = await getEntry('privacyPolicy', 'privacy-policy');
+const { Content } = await render(privacyPolicy!);
+const frontmatter = privacyPolicy!.data;
+---
+
+<BaseLayout
+    pageTitle={frontmatter.title}
+    pageOgTitle={frontmatter.og_title}
+    pageOgDescription={frontmatter.og_description}
+    pageOgUrl={frontmatter.og_url}
+    pageOgType={frontmatter.og_type}
+>
+    <div class="px-4 sm:px-6 max-w-3xl mx-auto py-16 animate-fade-in">
+        <div class="prose prose-lg dark:prose-invert max-w-none prose-p:mb-6">
+            <Content />
+        </div>
+    </div>
+</BaseLayout>
