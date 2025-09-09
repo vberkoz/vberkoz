@@ -24,7 +24,7 @@
 .prose h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-top: 1.75rem;
+  margin-top: 4rem;
   margin-bottom: 0.75rem;
 }
 
@@ -63,24 +63,29 @@
 
 /* Blockquotes */
 .prose blockquote {
-  border-left: 4px solid #e2e8f0;
+  /* Use CSS variables for a theme-aware border color */
+  border-left: 4px solid var(--color-border);
   padding-left: 1rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-style: italic;
-  color: #6d7682;
+  /* Use CSS variables for a theme-aware color */
+  color: var(--color-muted-foreground);
 }
 
 /* Code blocks */
 .prose pre {
-  background-color: #f7fafc;
+  /* Use CSS variables for a theme-aware background color */
+  background-color: var(--color-muted);
   border-radius: 0.375rem;
   padding: 1rem;
   overflow-x: auto;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  /* Use CSS variables for a theme-aware text color */
+  color: var(--color-foreground);
 }
 
 .prose code {
@@ -88,8 +93,10 @@
   font-size: 0.875rem;
   padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
-  background-color: #f1f5f9;
-  color: oklch(0.985 0 0);
+  /* Use CSS variables for a theme-aware background color */
+  background-color: var(--color-input);
+  /* Use CSS variables for a theme-aware text color */
+  color: var(--color-primary);
 }
 
 .prose pre code {
@@ -126,22 +133,26 @@
   margin-bottom: 1.5rem;
   overflow-x: auto;
   display: block;
+  color: var(--color-foreground);
 }
 
 .prose table thead {
-  background-color: #f1f5f9;
+  /* Use CSS variables for a theme-aware background color */
+  background-color: var(--color-card);
 }
 
 .prose table th {
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  border-bottom: 2px solid #e2e8f0;
+  /* Use CSS variables for a theme-aware border color */
+  border-bottom: 2px solid var(--color-border);
 }
 
 .prose table td {
   padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  /* Use CSS variables for a theme-aware border color */
+  border-bottom: 1px solid var(--color-border);
 }
 
 .prose table tr:last-child td {
@@ -152,35 +163,11 @@
 .prose hr {
   border: 0;
   height: 1px;
-  background-color: #e2e8f0;
+  /* Use CSS variables for a theme-aware background color */
+  background-color: var(--color-border);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .prose blockquote {
-    border-left-color: #4a5568;
-    color: #6d7682;
-  }
-  
-  .prose pre {
-    background-color: #1a202c;
-  }
-  
-  .prose code {
-    background-color: #2d3748;
-  }
-  
-  .prose table thead {
-    background-color: #2d3748;
-  }
-  
-  .prose table th, .prose table td {
-    border-bottom-color: #4a5568;
-  }
-  
-  .prose hr {
-    background-color: #4a5568;
-  }
-}
+/* Remove the old dark mode media query as it's no longer needed */
+/* The CSS variables from global.css handle the theme switching */
