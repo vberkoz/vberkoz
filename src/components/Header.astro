@@ -1,5 +1,6 @@
 ---
 import Hamburger from "./Hamburger.astro";
+import { SearchDialog } from "./SearchDialog";
 import ThemeIcon from "./ThemeIcon.astro";
 const { pathname } = Astro.url;
 const links = [
@@ -39,7 +40,8 @@ const links = [
             }
         </div>
 
-        <div class="flex items-center">
+        <div class="flex items-center gap-2">
+            <SearchDialog client:load />
             <ThemeIcon />
             <Hamburger />
         </div>
@@ -87,15 +89,38 @@ const links = [
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeButton = document.getElementById('close-menu');
-        
+
+        // Function to calculate scrollbar width
+        function getScrollbarWidth() {
+        // Create a temporary div to measure the scrollbar
+        const outer = document.createElement('div');
+        outer.style.visibility = 'hidden';
+        outer.style.overflow = 'scroll'; // Force scrollbars
+        document.body.appendChild(outer);
+
+        const inner = document.createElement('div');
+        outer.appendChild(inner);
+
+        const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+
+        if (outer.parentNode) {
+            outer.parentNode.removeChild(outer);
+        }
+
+        return scrollbarWidth;
+        }
+
+        // Set a CSS variable with the scrollbar width
+        document.documentElement.style.setProperty('--scrollbar-width', `${getScrollbarWidth()}px`);
+
         hamburger?.addEventListener('click', () => {
             mobileMenu?.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
+            document.body.classList.toggle('no-scroll');
         });
-        
+
         closeButton?.addEventListener('click', () => {
             mobileMenu?.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('no-scroll');
         });
     });
 </script>
