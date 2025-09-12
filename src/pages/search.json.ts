@@ -5,7 +5,7 @@ const allPosts = await import.meta.glob('../blog/*.md', { eager: true });
 
 const searchIndex = Object.values(allPosts).map((post: any) => ({
   // The URL of the post is available on the imported module
-  url: `${post.frontmatter.og_url.split('/').pop()}`,
+  url: post.frontmatter.og_url,
   // Frontmatter fields are directly accessible
   title: post.frontmatter.title,
   description: post.frontmatter.description,
