@@ -18,7 +18,7 @@ Hey there, fellow developers\! 👋 Ever found yourself wrestling with complex d
 
 In this deep dive, we’ll explore what TanStack Query is, why it's a game-changer, and how you can master it with practical, real-world examples. Get ready to level up your state management skills\! 🚀
 
-### **What is TanStack Query? A Paradigm Shi**ft
+### **What is TanStack Query? A Paradigm Shift** 🚀
 
 Before we jump into the code, let's understand the core concept behind TanStack Query (formerly React Query). It's not a global state management library like Redux or Zustand, though it can work alongside them. Instead, TanStack Query is a dedicated **server state management library**.
 
@@ -34,7 +34,7 @@ Think about it: user profiles, product lists, blog posts—this data is "stale" 
 
 By offloading these responsibilities, you can focus on building your UI, not on managing `isLoading` and `error` states manually.
 
-### **Getting Started: The Basic `useQuery` Hook** 🚀
+### **Getting Started: The Basic `useQuery` Hook** 🪄
 
 Let's start with the bread and butter of TanStack Query: the `useQuery` hook. Imagine we're building a simple blog application and need to fetch a list of posts.
 
@@ -288,7 +288,7 @@ This might seem like a lot of code, but it's a powerful and reusable pattern. Yo
 
 > The `onMutate` function receives the same variables as the `mutate` function and is called before the mutation function. It's the perfect place to update your cache optimistically.
 
-### **Going Further: Custom Hooks and Reusability** 🔄
+### **Going Further: Custom Hooks and Reusability** ♻️
 
 To keep your codebase clean and maintainable, it's a best practice to encapsulate your data fetching logic into custom hooks.
 
