@@ -7,7 +7,6 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ['astro', 'tailwind', 'web-development']
 og_title: "From Prototype to Production: Building a Mobile-Friendly Web App with Astro & Tailwind"
 og_description: "Step-by-step guide on using Astro and Tailwind CSS to create a fast, responsive, mobile-first web app and deploy it to production."
 og_type: "article"

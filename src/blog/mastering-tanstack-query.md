@@ -7,7 +7,6 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ["react", "web-development", "frontend"]
 og_title: "Mastering State Management with TanStack Query"
 og_description: "Learn how to use TanStack Query for efficient and powerful state management with real-world examples."
 og_type: "article"

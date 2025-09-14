@@ -7,7 +7,6 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ['serverless', 'aws', 'backend']
 og_title: "Serverless Made Simple: How I Use AWS Lambda, API Gateway & DynamoDB"
 og_description: "Learn how I build fast, scalable apps using AWS serverless architecture. Real use cases and code examples included."
 og_type: "article"

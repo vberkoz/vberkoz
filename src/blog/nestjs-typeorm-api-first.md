@@ -5,9 +5,8 @@ updatedDate: 2025-04-28
 description: 'Showcase your backend skills with a modern framework like NestJS. Learn how to design and build a REST API using NestJS and TypeORM.'
 author: 'Vasyl Berkoz'
 image:
-    url: '/assets/images/nestjs-typeorm.webp'
-    alt: 'NestJS and TypeORM logos side by side.'
-tags: ["backend", "web-development", "architecture"]
+    url: ''
+    alt: ''
 og_title: "API First: Building a REST API with NestJS and TypeORM"
 og_description: "Learn how to design and build a robust, scalable REST API using the powerful combination of NestJS and TypeORM."
 og_type: "article"

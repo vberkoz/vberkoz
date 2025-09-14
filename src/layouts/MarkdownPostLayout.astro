@@ -1,11 +1,11 @@
 ---
 import { Button } from "@/components/ui/button";
 import BaseLayout from "./BaseLayout.astro";
-import { ArrowLeft, CalendarDays, Clock, Tag, History } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock, History } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import "../styles/markdown.css";
 import { getCollection } from "astro:content";
 import { calculateReadTime } from "@/lib/readTime";
+import "../styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 const allPosts = await getCollection("blog");
@@ -39,7 +39,6 @@ const post = {
 <BaseLayout
     pageTitle={frontmatter.title}
     pageDescription={frontmatter.description}
-    pageKeywords={frontmatter.tags.join(", ")}
     pageAuthor={frontmatter.author}
     pageOgTitle={frontmatter.title}
     pageOgDescription={frontmatter.description}
@@ -83,23 +82,13 @@ const post = {
                     <span>{post.readTime}</span>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-1">
-                    <Tag className="h-4 w-4" />
-                    {
-                        frontmatter.tags.map((tag: string) => (
-                            <span class="inline-block text-sm font-medium py-1 px-2 bg-secondary text-secondary-foreground rounded-md whitespace-nowrap">
-                                <a href={`/tags/${tag}`}>{tag}</a>
-                            </span>
-                        ))
-                    }
-                </div>
             </div>
         </div>
 
         <Separator className="my-6" />
 
         <div class="prose prose-lg dark:prose-invert max-w-none prose-p:mb-6">
-            <p class="text-lg leading-relaxed mb-6">
+            <p class="text-xl leading-relaxed mb-6">
                 {frontmatter.description}
             </p>
 

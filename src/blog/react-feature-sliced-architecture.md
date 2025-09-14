@@ -4,9 +4,8 @@ pubDate: 2025-04-21
 description: 'A practical guide to re-architecting a monolithic React application into a scalable, maintainable project using the Feature-Sliced Design methodology. Learn about folder structures, component co-location, and improved developer experience.'
 author: 'Vasyl Berkoz'
 image:
-    url: '/assets/images/feature-sliced-architecture.jpg'
-    alt: 'A visual representation of a feature-sliced design, showing separate, modular hexagons connecting to a central core, illustrating a scalable folder structure.'
-tags: ['react', 'architecture', 'frontend']
+    url: ''
+    alt: ''
 og_title: "From Monolith to Modular: Re-architecting a React App with Feature Slices"
 og_description: "Break free from the 'components' and 'pages' folders. Learn how to implement a feature-sliced architecture in your React projects for better scalability and maintainability."
 og_type: "article"

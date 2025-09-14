@@ -7,7 +7,6 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ['react', 'vite', 'frontend']
 og_title: "Modern Frontend Architecture with Vite, React & TanStack"
 og_description: "Explore how to use Vite, React, and the TanStack suite to architect scalable, maintainable frontend applications."
 og_type: "article"

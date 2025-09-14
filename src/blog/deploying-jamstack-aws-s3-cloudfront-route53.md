@@ -7,7 +7,6 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ["aws", "web-development", "architecture"]
 og_title: "Deploying a Jamstack Site to AWS with S3, CloudFront & Route 53"
 og_description: "Learn how to deploy a Jamstack site on AWS using S3 for storage, CloudFront for content delivery, and Route 53 for DNS, creating a scalable and efficient hosting solution."
 og_type: "article"

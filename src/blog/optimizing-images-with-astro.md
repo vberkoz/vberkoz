@@ -7,14 +7,11 @@ author: 'Vasyl Berkoz'
 image:
     url: ''
     alt: ''
-tags: ["astro", "web-development"]
 og_title: "Optimizing Images with Astro: A Deep Dive into the Image Component"
 og_description: "A deep dive into how Astro’s Image component can help you automatically optimize images for web performance, from lazy loading to modern formats."
 og_type: "article"
 og_url: "https://vberkoz.com/posts/optimizing-images-with-astro"
 ---
-
-**Optimizing Images with Astro: A Deep Dive into the Image Component** 🖼️
 
 In a previous post, I touched upon the importance of performance, and one of the biggest culprits of a slow website is unoptimized images. Images are essential for engaging content, but they can be a significant drag on load times if not handled correctly. This isn't just a matter of making your site feel snappy; it's a critical factor for user experience, SEO, and even your bounce rate.
 

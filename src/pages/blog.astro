@@ -36,8 +36,6 @@ const postsWithReadTime = sortedPosts.map((post) => {
         formattedDate,
     };
 });
-
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout
@@ -59,26 +57,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
             </p>
         </section>
 
-        <div class="flex flex-wrap gap-2 mb-8 justify-center animate-fade-in">
-            <Badge
-                variant="default"
-                className="cursor-pointer whitespace-nowrap"
-            >
-                <a href="/blog">All</a>
-            </Badge>
-            {
-                tags.map((tag) => (
-                    <Badge
-                        key={tag}
-                        variant="outline"
-                        className="cursor-pointer whitespace-nowrap"
-                    >
-                        <a href={`/tags/${tag}`}>{tag}</a>
-                    </Badge>
-                ))
-            }
-        </div>
-
         <div class="space-y-8 animate-slide-up">
             {
                 postsWithReadTime.map((post) => (
@@ -90,15 +68,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                             <div class="flex-1 px-6">
                                 <div class="items-center space-y-4 space-x-4 mb-3">
                                     <div class="flex flex-col gap-4 mb-3">
-                                        <div class="flex flex-wrap gap-2">
-                                            {post.data.tags.map((tag: string) => (
-                                                <span class="inline-block text-sm font-medium py-1 px-2 bg-secondary text-secondary-foreground rounded-md whitespace-nowrap">
-                                                    <a href={`/tags/${tag}`}>
-                                                        {tag}
-                                                    </a>
-                                                </span>
-                                            ))}
-                                        </div>
                                         <div class="flex items-center gap-4">
                                             <span class="text-sm text-muted-foreground">
                                                 {post.formattedDate}
