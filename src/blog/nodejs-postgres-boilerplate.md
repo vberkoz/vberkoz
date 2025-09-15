@@ -17,7 +17,7 @@ Hey everyone\! 👋 As a developer, I've built my fair share of backends, from s
 
 This isn't a theoretical post. This is a "here's how I do it" guide, complete with the specific libraries, file structure, and best practices that I find invaluable. My goal is to save you countless hours of setup and give you a rock-solid starting point for your next project.
 
-## **Why Node.js and PostgreSQL?** 🐘
+### Why Node.js and PostgreSQL? 🐘
 
 Before we dive into the code, let’s quickly talk about why this combination works so well.
 
@@ -27,7 +27,7 @@ Before we dive into the code, let’s quickly talk about why this combination wo
 
 Together, they form a powerful and reliable stack that scales from a small personal project to a large-scale application serving millions of users.
 
-## **The Core Stack: My Go-To Libraries**
+### The Core Stack: My Go-To Libraries
 
 Here are the key libraries that form the backbone of our boilerplate. I’ve chosen them for their performance, reliability, and ease of use.
 
@@ -41,7 +41,7 @@ Here are the key libraries that form the backbone of our boilerplate. I’ve cho
   * **`jest`**: My go-to testing framework for Node.js. It's fast, well-documented, and has a great developer experience.
   * **`uuid`**: For generating unique identifiers.
 
-## **Project Structure: The Blueprint for Success** 🏗️
+### Project Structure: The Blueprint for Success 🏗️
 
 A well-organized project structure is the secret to a maintainable codebase. This layout separates concerns and makes it easy for new developers to jump in and understand where everything is.
 
@@ -85,7 +85,7 @@ A well-organized project structure is the secret to a maintainable codebase. Thi
 
 ## Let's Build It: A Step-by-Step Walkthrough
 
-### **1\. Setting Up the Database** 💾
+### 1\. Setting Up the Database 💾
 
 First, we need a PostgreSQL database. If you don't have one, you can install it locally or use a cloud provider like Heroku, Vercel, or DigitalOcean.
 
@@ -114,7 +114,7 @@ export const query = (text: string, params: any[] = []) => {
 
 This simple file exports a `query` function that we can use throughout our application. It's a clean abstraction over the `pg` client.
 
-### **2\. User Authentication: The Foundation of Any App** 🔐
+### 2\. User Authentication: The Foundation of Any App 🔐
 
 Authentication is a critical component. We'll use a JWT-based system.
 
@@ -212,7 +212,7 @@ export const login = async (req: Request, res: Response) => {
 
 This separation of concerns—**Controller, Service, Model**—is known as the "Service Layer" pattern, and it’s a major key to creating a scalable, maintainable application.
 
-### **3\. Middleware: The Request Gatekeepers** 🛡️
+### 3\. Middleware: The Request Gatekeepers 🛡️
 
 Middleware functions are perfect for cross-cutting concerns like validation and authentication.
 
@@ -264,7 +264,7 @@ export default router;
 
 This clearly separates the routes from the logic of authenticating a user.
 
-### **4\. Testing with Jest** 🧪
+### 4\. Testing with Jest 🧪
 
 A good boilerplate isn't complete without a solid testing setup. Testing backend logic is non-negotiable for scalable applications.
 
@@ -313,7 +313,7 @@ describe('Auth Service', () => {
 
 This is a simple but powerful example of how to test a service. We can test the login service in a similar way. The key is to mock external dependencies like the database and other services.
 
-## **Final Thoughts and Next Steps** 🚀
+## Final Thoughts and Next Steps 🚀
 
 This boilerplate is a solid foundation, not a complete application. It gives you a clean architecture and all the tools you need to scale. From here, you can:
 

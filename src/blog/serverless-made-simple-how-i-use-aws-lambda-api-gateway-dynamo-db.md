@@ -13,13 +13,13 @@ og_type: "article"
 og_url: "https://vberkoz.com/posts/serverless-made-simple-how-i-use-aws-lambda-api-gateway-dynamo-db"
 ---
 
-### **Introduction** 🚀
+### Introduction 🚀
 
 Serverless is more than a buzzword—it's a powerful model that lets developers focus on writing code without worrying about infrastructure. In this updated post, I’ll walk through how I use AWS Lambda, API Gateway, and DynamoDB together to build scalable, cost-efficient backends for real-world projects like **Driver-Sync** and **Car-Keeper**.  
 
 Over the past few months, I’ve refined my patterns, explored new optimizations, and gathered lessons from production deployments. This article blends fundamentals with fresh insights so you can apply serverless to your own apps with confidence.
 
-### **Why Serverless?** ⚡
+### Why Serverless? ⚡
 
 The main appeal of serverless is not just cost savings, but **developer velocity**. By removing infrastructure overhead, I can deliver features faster while maintaining reliability. Here’s why I keep choosing serverless:
 
@@ -31,7 +31,7 @@ The main appeal of serverless is not just cost savings, but **developer velocity
 
 The result? I can build apps that grow as users grow, without scaling headaches.
 
-### **Architecture Overview** 🏗️
+### Architecture Overview 🏗️
 
 A typical architecture I use looks like this:
 
@@ -45,7 +45,7 @@ Supporting services include:
 
 This combination allows me to define, deploy, and scale in minutes. I often represent the flow as a simple diagram with arrows to show data moving between client, API Gateway, Lambda, and DynamoDB.
 
-### **API Gateway + Lambda** 🔌
+### API Gateway + Lambda 🔌
 
 API Gateway is my **front door** for client requests. I define endpoints via CDK or SST, linking each route to a Lambda function. Depending on the project, I use either:
 
@@ -64,7 +64,7 @@ app.get("/drivers", async (req, res) => {
 
 This pattern feels familiar for web developers while still taking advantage of Lambda’s scalability.
 
-### **Working with DynamoDB** 🗄️
+### Working with DynamoDB 🗄️
 
 DynamoDB is my go-to database for serverless because it’s fully managed, highly available, and integrates perfectly with Lambda.
 
@@ -87,7 +87,7 @@ Example schema:
 
 This structure makes it easy to store profiles, logs, reports, and assignments in the same table, differentiated by sort keys.
 
-### **Performance & Cost Optimization** 📈
+### Performance & Cost Optimization 📈
 
 One concern with Lambda is **cold starts**—the slight delay when a function spins up. Some strategies I use:
 
@@ -98,7 +98,7 @@ One concern with Lambda is **cold starts**—the slight delay when a function sp
 
 These adjustments save both time and money at scale.
 
-### **Common Pitfalls & Fixes** 🛠️
+### Common Pitfalls & Fixes 🛠️
 
 Even with best practices, I’ve hit a few bumps:
 
@@ -108,7 +108,7 @@ Even with best practices, I’ve hit a few bumps:
 
 Each of these problems has a solution, but it’s better to anticipate them early.
 
-### **Real Project Use Case: Driver-Sync** 📱
+### Real Project Use Case: Driver-Sync 📱
 
 Driver-Sync is a mobile-first app for fleet management. It handles:
 
@@ -119,7 +119,7 @@ Driver-Sync is a mobile-first app for fleet management. It handles:
 
 Serverless makes this possible without a heavy backend team. I can push updates quickly, scale automatically, and keep costs predictable.
 
-### **Looking Ahead** 🔮
+### Looking Ahead 🔮
 
 As serverless evolves, I’m experimenting with:
 
@@ -130,7 +130,7 @@ As serverless evolves, I’m experimenting with:
 
 The ecosystem keeps expanding, which means even more opportunities to build without servers.
 
-### **Conclusion** ✅
+### Conclusion ✅
 
 AWS serverless tools like Lambda, API Gateway, and DynamoDB enable developers to **ship faster, scale effortlessly, and reduce infrastructure maintenance**.
 

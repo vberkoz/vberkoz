@@ -17,7 +17,7 @@ In the world of modern software development, APIs are the glue that holds everyt
 
 Today, we'll dive into building a robust, scalable, and maintainable REST API using a fantastic combination of tools: **NestJS** and **TypeORM**. NestJS brings a powerful, opinionated, and highly structured framework to the Node.js ecosystem, while TypeORM provides a flexible and feature-rich Object-Relational Mapper (ORM) for interacting with your database.
 
-### **The Case for NestJS and TypeORM** 🚀
+### The Case for NestJS and TypeORM 🚀
 
 Why this specific duo?
 
@@ -36,7 +36,7 @@ Why this specific duo?
 
 > The synergy between NestJS's dependency injection and TypeORM's entity-based approach is powerful. You can inject your database repositories directly into your services, leading to clean, testable code.
 
-### **Getting Started: The API-First Mindset** 🧠
+### Getting Started: The API-First Mindset 🧠
 
 Before we write a single line of code, let's think about our API. What resources will it expose? What actions can be performed on those resources? Let's imagine we're building a simple `Blog` API. We'll need resources for `posts` and `users`.
 
@@ -53,7 +53,7 @@ Before we write a single line of code, let's think about our API. What resources
 
 This simple contract guides our development process. We know exactly what endpoints we need to build, what data to expect, and what data to return. This is the essence of the API-First approach.
 
-### **Setting Up Our Project** 🛠️
+### Setting Up Our Project 🛠️
 
 First, make sure you have NestJS CLI installed:
 
@@ -67,7 +67,7 @@ Next, install TypeORM and your preferred database driver (we'll use PostgreSQL f
 
 `npm install @nestjs/typeorm typeorm pg`
 
-### **Building the Core Modules** 🏗️
+### Building the Core Modules 🏗️
 
 NestJS is modular. A `module` is a class annotated with `@Module()` that provides a set of services and controllers. Let's create `Users` and `Posts` modules.
 
@@ -125,7 +125,7 @@ export class Post {
 
 Notice the relationships: a `User` has `OneToMany` `Posts`, and a `Post` has a `ManyToOne` relationship with a `User`. This is the power of TypeORM.
 
-### **Connecting to the Database** 🔗
+### Connecting to the Database 🔗
 
 In `src/app.module.ts`, we'll configure TypeORM and connect it to our database.
 
@@ -158,7 +158,7 @@ export class AppModule {}
 
 > **Note on `synchronize`:** Setting this to `true` is great for development as it automatically creates tables based on your entities. **NEVER** use this in production. Instead, use TypeORM migrations to safely update your database schema.
 
-### **Creating the Service and Controller** 🖥️
+### Creating the Service and Controller 🖥️
 
 Now, let's build the `PostsService` and `PostsController`.
 
@@ -231,7 +231,7 @@ export class PostsController {
 
 The `@Controller('posts')` decorator defines the base route for our endpoints. `@Get()`, `@Get(':id')`, and `@HttpPost()` map to the HTTP verbs and URLs we defined in our API contract. We've just built the core logic for a robust API\!
 
-### **Showcasing Your Skills** 🎉
+### Showcasing Your Skills 🎉
 
 By following this pattern, you demonstrate a deep understanding of modern backend development principles:
 

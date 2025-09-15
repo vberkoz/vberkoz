@@ -19,7 +19,7 @@ This is where the dynamic duo of **Astro** and **Tailwind CSS** enters the pictu
 
 In this comprehensive guide, I'll walk you through my personal process for building and deploying a mobile-friendly, production-grade web application using this stack. We'll go from initial prototyping and layout design to a live, performance-optimized site.
 
-### **Why I Chose Astro for Blazing-Fast Performance** 🚀
+### Why I Chose Astro for Blazing-Fast Performance 🚀
 
 Traditional JavaScript frameworks often ship large client-side bundles, slowing down page loads and negatively impacting user experience and SEO. Astro takes a fundamentally different, and in my opinion, better approach.
 
@@ -34,7 +34,7 @@ Astro’s "islands architecture" is the secret to its performance. It renders yo
 
 For projects where performance is a top priority—like blogs, marketing sites, or documentation—Astro is the clear winner.
 
-### **Prototyping and Design with a Mobile-First Mindset** 🎨
+### Prototyping and Design with a Mobile-First Mindset 🎨
 
 Before a single line of code is written, I always start with a mobile-first design in [Figma](https://figma.com/). The constraints of a smaller screen force you to prioritize content and user flow, ensuring a clean and effective user experience.
 
@@ -46,7 +46,7 @@ My prototyping process includes:
 
 Once the wireframes are solid, I move straight to code, using Tailwind CSS's utility classes to translate the design directly into HTML.
 
-### **Setting Up Astro & Tailwind CSS: A Seamless Integration** 🧱
+### Setting Up Astro & Tailwind CSS: A Seamless Integration 🧱
 
 Getting started with Astro is a breeze. The CLI handles most of the heavy lifting.
 
@@ -76,7 +76,7 @@ Astro’s integration handles all the configuration for you, adding the necessar
 
 This simple setup means you can start building your UI instantly.
 
-### **Mobile-First Component Design in Practice** 📱
+### Mobile-First Component Design in Practice 📱
 
 With a mobile-first design, you build your components for the smallest screen first, then use responsive modifiers to adjust the layout for larger screens. Tailwind's utility classes make this workflow intuitive.
 
@@ -110,7 +110,7 @@ Let's look at a simple, reusable card component for a blog post:
   * Leverage flexbox utilities (`flex flex-col md:flex-row`) to build flexible, responsive layouts.
   * Optimize touch targets on buttons and links for a better mobile user experience (`py-3 px-6`).
 
-### **Performance Optimization Beyond Defaults** ⚡
+### Performance Optimization Beyond Defaults ⚡
 
 Astro's architecture gives you a massive performance head start. But there are still ways to optimize further for a perfect user experience.
 
@@ -146,7 +146,7 @@ Astro's architecture gives you a massive performance head start. But there are s
 
 By implementing these strategies, your site can consistently achieve a perfect Lighthouse score, which is a powerful signal to both users and search engines.
 
-### **Deployment to Production** 🚀
+### Deployment to Production 🚀
 
 Once your site is built and optimized, deploying it is incredibly straightforward. The `npm run build` command generates a static `dist/` folder that can be hosted anywhere.
 
@@ -164,7 +164,7 @@ For more advanced use cases or full control, you can manually deploy to AWS.
 
 This method gives you ultimate control but requires more manual setup.
 
-### **Final Thoughts** ✅
+### Final Thoughts ✅
 
 Astro and Tailwind CSS are a dream team for modern web development. They embody a philosophy of performance, simplicity, and developer experience.
 

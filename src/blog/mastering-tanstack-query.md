@@ -17,7 +17,7 @@ Hey there, fellow developers\! 👋 Ever found yourself wrestling with complex d
 
 In this deep dive, we’ll explore what TanStack Query is, why it's a game-changer, and how you can master it with practical, real-world examples. Get ready to level up your state management skills\! 🚀
 
-### **What is TanStack Query? A Paradigm Shift** 🚀
+### What is TanStack Query? A Paradigm Shift 🚀
 
 Before we jump into the code, let's understand the core concept behind TanStack Query (formerly React Query). It's not a global state management library like Redux or Zustand, though it can work alongside them. Instead, TanStack Query is a dedicated **server state management library**.
 
@@ -33,7 +33,7 @@ Think about it: user profiles, product lists, blog posts—this data is "stale" 
 
 By offloading these responsibilities, you can focus on building your UI, not on managing `isLoading` and `error` states manually.
 
-### **Getting Started: The Basic `useQuery` Hook** 🪄
+### Getting Started: The Basic `useQuery` Hook 🪄
 
 Let's start with the bread and butter of TanStack Query: the `useQuery` hook. Imagine we're building a simple blog application and need to fetch a list of posts.
 
@@ -115,13 +115,9 @@ Look at the magic\! ✨ TanStack Query handles the entire lifecycle for us:
 3.  **`data`**: Holds the fetched posts once the request is successful.
 4.  **`queryKey: ['posts']`**: This is crucial. It acts as a unique identifier for the query. TanStack Query uses it to cache the data. If another component anywhere in your app calls `useQuery` with the same key, it will get the cached data immediately. No extra network request\! 🤯
 
-### **The Power of `useQuery` Hooks** ⚡
+### Dependent Queries: Fetching Data in Sequence 🔗
 
-The beauty of `useQuery` goes far beyond a simple fetch. Let's look at more advanced scenarios.
-
-### **Dependent Queries: Fetching Data in Sequence** 🔗
-
-What if you need to fetch a user's details and then, based on that user's ID, fetch their specific projects? This is a common pattern.
+The beauty of `useQuery` goes far beyond a simple fetch. Let's look at more advanced scenarios. What if you need to fetch a user's details and then, based on that user's ID, fetch their specific projects? This is a common pattern.
 
 ```jsx
 // src/components/UserProfile.jsx
@@ -175,7 +171,7 @@ export default UserProfile;
 
 Notice the `enabled: !!user` option. This is a powerful feature that makes the second query for projects **dependent** on the first one. The `projects` query will not run until the `user` data is available. No more `if (user) { ... }` spaghetti code\! 🍝
 
-### **Mastering Data Mutations with `useMutation`** 🛠️
+### Mastering Data Mutations with `useMutation` 🛠️
 
 Fetching data is only half the story. What about creating, updating, or deleting data? This is where `useMutation` comes in. It's designed specifically for asynchronous server-side effects.
 
@@ -242,7 +238,7 @@ This simple example showcases the power of `useMutation`:
 3.  **`onSuccess`**: A callback that runs after a successful mutation. This is where the magic happens\!
 4.  **`queryClient.invalidateQueries({ queryKey: ['posts'] })`**: This is the key to automatic UI synchronization. It tells TanStack Query that the data for the `['posts']` key is now stale and should be refetched the next time it's accessed. This ensures that our `PostsList` component automatically updates with the new post. No need for manual state updates or complicated prop drilling. Just invalidate, and let TanStack Query handle the rest. 🧠
 
-### **Optimistic Updates: The UX Gold Standard** ✨
+### Optimistic Updates: The UX Gold Standard ✨
 
 For an even better user experience, we can perform **optimistic updates**. This means we update the UI *before* the server responds, assuming the mutation will be successful. If it fails, we roll back to the previous state. This makes the UI feel incredibly fast and responsive.
 
@@ -287,7 +283,7 @@ This might seem like a lot of code, but it's a powerful and reusable pattern. Yo
 
 > The `onMutate` function receives the same variables as the `mutate` function and is called before the mutation function. It's the perfect place to update your cache optimistically.
 
-### **Going Further: Custom Hooks and Reusability** ♻️
+### Going Further: Custom Hooks and Reusability ♻️
 
 To keep your codebase clean and maintainable, it's a best practice to encapsulate your data fetching logic into custom hooks.
 
@@ -348,7 +344,7 @@ const PostsListSimplified = () => {
 
 This approach promotes a clean separation of concerns: your components only handle UI logic, while your custom hooks manage data fetching and state.
 
-### **Conclusion: Embrace the Change** 🌟
+### Conclusion: Embrace the Change 🌟
 
 TanStack Query is more than just a data fetching library; it's a comprehensive solution for managing server state in a declarative, efficient, and enjoyable way. By moving away from manual `useEffect` chains and embracing a system that handles caching, background updates, and synchronization for you, you'll find your code becomes cleaner, more robust, and easier to maintain.
 

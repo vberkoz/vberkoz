@@ -13,10 +13,10 @@ og_type: "article"
 og_url: "https://vberkoz.com/posts/modern-frontend-architecture-with-vite-react-tan-stack"
 ---
 
-### **Introduction** 👋
+### Introduction 👋
 Vite changed the game for frontend tooling with its lightning-fast dev server and modern build system. Pair that with React and the powerful TanStack suite (Query, Router, Form, Table), and you've got a frontend stack that's fast, scalable, and enjoyable to work with. In this post, I’ll walk you through the architectural patterns I use in production projects and expand on lessons learned since the initial version of this article.
 
-### **Why Vite, React & TanStack?** 🚀
+### Why Vite, React & TanStack? 🚀
 The combination of Vite, React, and TanStack has become one of the strongest contenders for building production-ready applications. Let’s recap and expand why:
 
 - **Vite**: Instant hot module replacement, optimized builds, and TypeScript support. Compared to Webpack or CRA, Vite drastically reduces friction in development and deployment.
@@ -27,7 +27,7 @@ The combination of Vite, React, and TanStack has become one of the strongest con
 
 When combined, these tools let you write less boilerplate and focus more on business logic.
 
-### **Folder Structure** 📁
+### Folder Structure 📁
 A maintainable project starts with a solid structure:
 
 ```
@@ -51,13 +51,13 @@ src/
 ├── types/
 └── main.tsx
 
-````
+```
 
 This layout keeps business logic and UI closely tied to each feature. Features are isolated, but still consistent across the app. It avoids the trap of “god folders” where everything mixes together.
 
 > **Tip:** Treat each feature like its own mini-application.
 
-### **Routing with TanStack Router** 🗺️
+### Routing with TanStack Router 🗺️
 Routing is no longer just about navigation; it’s about type safety, nested layouts, and predictable state.
 
 ```tsx
@@ -75,7 +75,7 @@ const router = createRouter({
     },
   ],
 });
-````
+```
 
 With TanStack Router:
 
@@ -85,7 +85,7 @@ With TanStack Router:
 
 This avoids subtle bugs caused by mis-typed params or missing props.
 
-### **Data Fetching with TanStack Query** 🌐
+### Data Fetching with TanStack Query 🌐
 
 Data fetching should be declarative, not imperative. Here’s a typical example:
 
@@ -107,7 +107,7 @@ Why it works so well:
 
 This elevates your app’s resilience while keeping code simple.
 
-### **Forms with TanStack Form + Zod** 📝
+### Forms with TanStack Form + Zod 📝
 
 Forms are notorious for complexity, but schema-driven validation simplifies them:
 
@@ -134,7 +134,7 @@ Why it matters:
 
 In practice, pairing this with UI libraries like ShadCN UI or TailwindCSS results in clean, user-friendly forms.
 
-### **Extra Tips for Clean Architecture** ✨
+### Extra Tips for Clean Architecture ✨
 
 Over the past months, I’ve refined some additional practices:
 
@@ -146,7 +146,7 @@ Over the past months, I’ve refined some additional practices:
 
 These habits keep projects maintainable, even as teams grow.
 
-### **What Changed Since Early 2025** 📅
+### What Changed Since Early 2025 📅
 
 Since originally writing this post in March 2025, a few trends and updates have stood out:
 
@@ -157,7 +157,7 @@ Since originally writing this post in March 2025, a few trends and updates have 
 
 This stack is no longer just an experiment—it’s production-grade and here to stay.
 
-### **Conclusion** ✅
+### Conclusion ✅
 
 This Vite + React + TanStack stack has drastically improved my productivity and code quality. Whether you’re building an admin dashboard, logistics app, or SaaS UI, this setup keeps things fast, typed, and easy to scale. Since early 2025, its adoption has only grown, and the tooling continues to evolve at a rapid pace.
 

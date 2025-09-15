@@ -21,7 +21,7 @@ In this guide, I'll walk you through the principles of the **Feature-Sliced Desi
 
 -----
 
-### **The Problem with a Traditional Monolithic Structure** 😫
+### The Problem with a Traditional Monolithic Structure 😫
 
 Before we dive into the solution, let's clearly define the pain points of a components/pages structure.
 
@@ -32,7 +32,7 @@ Before we dive into the solution, let's clearly define the pain points of a comp
 
 -----
 
-### **The Solution: Feature Slicing** 🧩
+### The Solution: Feature Slicing 🧩
 
 The core idea behind feature slicing is to organize your codebase around **features**, not file types. Instead of grouping all your components in one folder, you group all the code related to a specific feature in its own "slice" or directory.
 
@@ -74,13 +74,13 @@ src/
 └── main.tsx
 ```
 
-### **The Anatomy of a Feature-Sliced Structure** 🏗️
+### The Anatomy of a Feature-Sliced Structure 🏗️
 
 1.  **`features/`**: This is the heart of the architecture. Each subdirectory here represents a distinct feature of your application (e.g., `auth`, `user-profile`, `shopping-cart`). All code related to that feature—components, hooks, API calls—lives within its own folder.
 2.  **`pages/`**: The pages directory becomes much simpler. It contains top-level page components that primarily compose components from the `features/` and `shared/` directories. For example, `ProfilePage.tsx` would import `<UserProfileCard />` from `features/user-profile` instead of containing all the logic itself.
 3.  **`shared/`**: This directory is for truly reusable, "dumb" components and utility functions that don't belong to any single feature. Think of a generic `<Button />`, `<Modal />`, or a `debounce` utility function. These components should not have any business logic or depend on any specific feature.
 
-### **A Practical Example: The `user-profile` Feature** 💻
+### A Practical Example: The `user-profile` Feature 💻
 
 Let's imagine you need to build a new user profile page.
 
@@ -135,7 +135,7 @@ Notice how clean the `ProfilePage` component is. It doesn't know *how* to fetch 
 
 -----
 
-### **Benefits of this Approach** ✅
+### Benefits of this Approach ✅
 
 Implementing this architecture has a transformative effect on the developer experience and the long-term health of your codebase.
 
@@ -145,7 +145,7 @@ Implementing this architecture has a transformative effect on the developer expe
   * **Faster Onboarding:** The folder structure becomes a living documentation of your application. A new team member can quickly grasp the entire application's functionality just by looking at the feature list.
   * **Simplified Refactoring:** Deleting or replacing a feature becomes as simple as deleting a single directory.
 
-### **Final Thoughts** 🤔
+### Final Thoughts 🤔
 
 Adopting a feature-sliced architecture is a proactive step toward building a frontend that can stand the test of time. While it might feel like a bit of overkill for a "hello world" project, establishing this pattern early on will save you countless hours of refactoring and debugging down the line.
 
