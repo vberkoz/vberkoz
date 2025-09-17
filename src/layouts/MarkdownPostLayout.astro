@@ -47,16 +47,10 @@ const post = {
 >
     <div class="px-4 sm:px-6 max-w-3xl mx-auto py-16 animate-fade-in">
         <div class="mb-6">
-            <Button
-                variant="ghost"
-                asChild
-                className="mb-4 -ml-2 text-muted-foreground hover:text-foreground"
-            >
-                <a href="/blog" class="flex items-center gap-2">
-                    <ArrowLeft className="h-4 w-4" />
-                    Back to blog
-                </a>
-            </Button>
+            <a href="/blog" class="inline-flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.95] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 h-8 gap-1.5 rounded-full px-2.5 select-none border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                <ArrowLeft className="h-4 w-4" />
+                Back to blog
+            </a>
 
             <h1 class="text-3xl md:text-4xl font-bold mb-4 mt-4">
                 {frontmatter.title}
