@@ -1,5 +1,4 @@
 ---
-import { Badge } from "@/components/ui/badge";
 import {
     Card,
     CardContent,
@@ -11,107 +10,152 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const projects = [
     {
-        id: 0,
+        id: 1,
         title: "FinTime",
         url: "https://fintime.vberkoz.com/",
         github: "https://github.com/vberkoz/fintime-app",
         description: "Modern financial time-tracking for structured daily insights",
         image: "/placeholder.svg",
-        tags: ["Shadcn", "React", "TypeScript", "Express", "CDK"],
+        techs: [
+            { title: "Shadcn", url: "https://ui.shadcn.com/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "TanStack", url: "https://tanstack.com/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "ExpressJS", url: "https://expressjs.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" }
+        ],
         role: "Full-Stack Developer",
         year: "2025",
         company: "Own Project",
     },
     {
-        id: 1,
+        id: 2,
         title: "DriverSync",
         url: "http://driversync-astro.s3-website-eu-west-1.amazonaws.com/",
         github: "https://github.com/PrettySolution/driversync-web",
         description: "Web and mobile app designed to manage truck driver pre-trip inspections",
         image: "/placeholder.svg",
-        tags: ["Shadcn", "React", "TypeScript", "Express", "CDK", "React Native"],
+        techs: [
+            { title: "Shadcn", url: "https://ui.shadcn.com/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "TanStack", url: "https://tanstack.com/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "ExpressJS", url: "https://expressjs.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+            { title: "Expo", url: "https://expo.dev/" }
+        ],
         role: "Full-Stack Developer",
         year: "2025",
         company: "Pretty Solution",
         companyUrl: "https://prettysolution.com"
     },
     {
-        id: 2,
+        id: 3,
         title: "RiskAdjust Website",
         url: "https://www.riskadjust.net/",
         github: "https://github.com/vberkoz/riskadjust",
         description: "Commertial website for RiskAdjust team and product",
         image: "/placeholder.svg",
-        tags: ["Shadcn", "Next.js", "React", "Tailwind", "TypeScript", "CDK"],
+        techs: [
+            { title: "Shadcn", url: "https://ui.shadcn.com/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+            { title: "NextJS", url: "https://nextjs.org/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+        ],
         role: "Frontent Developer",
         year: "2023",
         company: "VF&Soft",
         companyUrl: "https://vf-soft.com"
     },
     {
-        id: 3,
+        id: 4,
+        title: "CortexAnalytics Website",
+        url: "http://ca.vberkoz.com/",
+        github: "https://github.com/vberkoz/ca-website",
+        description: "Commertial website for Cortex Analytics team and product",
+        image: "/placeholder.svg",
+        techs: [
+            { title: "MaterialDesignM3", url: "https://m3.material.io/" },
+            { title: "Astro", url: "https://astro.build/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
+        role: "Frontent Developer",
+        year: "2023",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 5,
+        title: "DistributedSalesForce",
+        url: "https://dsf.vberkoz.com/",
+        github: "https://github.com/vberkoz/dsf-website",
+        description: "Next.js website for an organization offering on-demand sales and marketing solutions",
+        image: "/placeholder.svg",
+        techs: [
+            { title: "CarbonDesign", url: "https://carbondesignsystem.com/" },
+            { title: "Next.js", url: "https://nextjs.org/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
+        role: "Full-Stack Developer",
+        year: "2023",
+        company: "VF&Soft",
+        companyUrl: "https://vf-soft.com"
+    },
+    {
+        id: 6,
         title: "CortexAnalytics App",
         description: "Healthcare management system with advanced analytics features",
         image: "/placeholder.svg",
-        tags: ["MaterialDesign", "Angular", "NestJS", "TypeORM", "PostgreSQL", "AWS"],
+        techs: [
+            { title: "MaterialDesignM1", url: "https://m1.material.io/" },
+            { title: "Angular", url: "https://angular.dev/" },
+            { title: "NestJS", url: "https://nestjs.com/" },
+            { title: "TypeORM", url: "https://typeorm.io/" },
+            { title: "PostgreSQL", url: "https://www.postgresql.org/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
         role: "Full-Stack Developer",
         year: "2023-2024",
         company: "VF&Soft",
         companyUrl: "https://vf-soft.com"
     },
     // {
-    //     id: 3,
+    //     id: 7,
     //     title: "Car-Keeper",
     //     description: "Mobile application for managing car collections",
     //     image: "/placeholder.svg",
-    //     tags: ["Figma", "React Native", "Expo", "AWS"],
+    //     techs: ["Figma", "React Native", "Expo", "AWS"],
     //     role: "Full-Stack Developer",
     //     year: "2023",
     //     company: "VF&Soft",
     //     companyUrl: "https://vf-soft.com"
     // },
-    {
-        id: 4,
-        title: "Distributed Sales Force",
-        url: "https://dsf.vberkoz.com/",
-        github: "https://github.com/vberkoz/dsf-website",
-        description: "Next.js website for an organization offering on-demand sales and marketing solutions",
-        image: "/placeholder.svg",
-        tags: ["CarbonDesign", "Next.js", "React", "Tailwind", "TypeScript"],
-        role: "Full-Stack Developer",
-        year: "2023",
-        company: "VF&Soft",
-        companyUrl: "https://vf-soft.com"
-    },
     // {
-    //     id: 5,
+    //     id: 8,
     //     title: "VPlus",
     //     description: "E-commerce website for selling groceries",
     //     image: "/placeholder.svg",
-    //     tags: ["Full-Stack", "Database", "UI Components"],
+    //     techs: ["Full-Stack", "Database", "UI Components"],
     //     role: "Full-Stack Developer",
     //     year: "2020",
     //     company: "Independent Contractor",
     // },
-    {
-        id: 5,
-        title: "CortexAnalytics Website",
-        url: "http://ca.vberkoz.com/",
-        github: "https://github.com/vberkoz/ca-website",
-        description: "Commertial website for Cortex Analytics team and product",
-        image: "/placeholder.svg",
-        tags: ["MaterialDesign", "Astro", "React", "Tailwind", "TypeScript", "CDK"],
-        role: "Frontent Developer",
-        year: "2023",
-        company: "VF&Soft",
-        companyUrl: "https://vf-soft.com"
-    },
     // {
-    //     id: 6,
+    //     id: 9,
     //     title: "Cortex-Knowledge",
     //     description: "Document management system with payment processing",
     //     image: "/placeholder.svg",
-    //     tags: ["Docker", "Node.js", "Express.js", "Stripe"],
+    //     techs: ["Docker", "Node.js", "Express.js", "Stripe"],
     //     role: "DevOps & Back-End Developer",
     //     year: "2019-2020",
     //     company: "VF&Soft",
@@ -131,21 +175,18 @@ const projects = [
     pageOgType="website"
 >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
-        <section class="text-center space-y-4 mb-12 animate-slide-down">
+        <section class="text-center space-y-4 mb-12">
             <h1 class="text-4xl font-bold">Projects</h1>
             <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
                 A selection of projects I've worked on throughout my career.
             </p>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {
                 projects.map((project) => (
-                    <Card
-                        key={project.id}
-                        className="overflow-hidden border border-border hover:shadow-md transition-shadow"
-                    >
-                        <CardHeader className="pb-2">
+                    <Card key={project.id}>
+                        <CardHeader>
                             <div class="flex justify-between items-start">
                                 <div>
                                     <CardTitle>
@@ -163,9 +204,9 @@ const projects = [
                                         )}
                                     </CardTitle>
                                     <CardDescription className="text-sm text-muted-foreground mt-1">
-                                        {project.companyUrl ? (
+                                        {project.url ? (
                                             <a 
-                                                href={project.companyUrl} 
+                                                href={project.url} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 class="hover:underline"
@@ -201,19 +242,15 @@ const projects = [
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className="pb-4">
+                        <CardContent>
                             <p class="text-muted-foreground mb-4">
                                 {project.description}
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <Badge
-                                        key={tag}
-                                        variant="secondary"
-                                        className="font-normal"
-                                    >
-                                        {tag}
-                                    </Badge>
+                                {project.techs.map((tech) => (
+                                    <a href={tech.url} class="inline-flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.95] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 h-6 gap-1.5 rounded-md px-2 select-none border border-input bg-none hover:bg-accent hover:text-accent-foreground">
+                                        {tech.title}
+                                    </a>
                                 ))}
                             </div>
                         </CardContent>

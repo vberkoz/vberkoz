@@ -17,7 +17,12 @@ const projects = [
         github: "https://github.com/vberkoz/textcase",
         description: "Text case conversion online tool that allows users to transform text between various case formats",
         image: "/placeholder.svg",
-        tags: ["Astro", "AWS CDK"],
+        techs: [
+            { title: "Astro", url: "https://astro.build/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
         role: "Full-Stack Developer",
         year: "2025",
     },
@@ -28,7 +33,12 @@ const projects = [
         github: "https://github.com/vberkoz/textclean",
         description: "Cleaning and formatting text online tool with a variety of transformation options",
         image: "/placeholder.svg",
-        tags: ["Astro", "AWS CDK"],
+        techs: [
+            { title: "Astro", url: "https://astro.build/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
         role: "Full-Stack Developer",
         year: "2025",
     },
@@ -39,7 +49,14 @@ const projects = [
         github: "https://github.com/serverless-solution/privnote-front",
         description: "Send Messages That Disappear Without a Trace",
         image: "/placeholder.svg",
-        tags: ["Astro", "AWS CDK"],
+        techs: [
+            { title: "Shadcn", url: "https://ui.shadcn.com/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "TanStack", url: "https://tanstack.com/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
         role: "Full-Stack Developer",
         year: "2025",
     },
@@ -67,11 +84,8 @@ const projects = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up">
             {
                 projects.map((project) => (
-                    <Card
-                        key={project.id}
-                        className="overflow-hidden border border-border hover:shadow-md transition-shadow"
-                    >
-                        <CardHeader className="pb-2">
+                    <Card key={project.id}>
+                        <CardHeader>
                             <div class="flex justify-between items-start">
                                 <div>
                                     <CardTitle>
@@ -116,19 +130,15 @@ const projects = [
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className="pb-4">
+                        <CardContent>
                             <p class="text-muted-foreground mb-4">
                                 {project.description}
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <Badge
-                                        key={tag}
-                                        variant="secondary"
-                                        className="font-normal"
-                                    >
-                                        {tag}
-                                    </Badge>
+                                {project.techs.map((tech) => (
+                                    <a href={tech.url} class="inline-flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.95] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 h-6 gap-1.5 rounded-md px-2 select-none border border-input bg-none hover:bg-accent hover:text-accent-foreground">
+                                        {tech.title}
+                                    </a>
                                 ))}
                             </div>
                         </CardContent>
