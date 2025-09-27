@@ -93,6 +93,25 @@ const projects = [
     },
     {
         id: 5,
+        title: "ThinkCar",
+        url: "https://thinkcar.vberkoz.com/",
+        github: "https://github.com/vberkoz/thinkcar",
+        description: "ThinkCar automotive diagnostic tools and solutions",
+        image: "/placeholder.svg",
+        techs: [
+            { title: "CarbonDesign", url: "https://carbondesignsystem.com/" },
+            { title: "Next.js", url: "https://nextjs.org/" },
+            { title: "React", url: "https://react.dev/" },
+            { title: "TypeScript", url: "https://www.typescriptlang.org/" },
+            { title: "Tailwind", url: "https://tailwindcss.com/" },
+            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+        ],
+        role: "Full-Stack Developer",
+        year: "2023",
+        company: "Own Project",
+    },
+    {
+        id: 6,
         title: "DistributedSalesForce",
         url: "https://dsf.vberkoz.com/",
         github: "https://github.com/vberkoz/dsf-website",
@@ -111,26 +130,26 @@ const projects = [
         company: "VF&Soft",
         companyUrl: "https://vf-soft.com"
     },
-    {
-        id: 6,
-        title: "CortexAnalytics App",
-        description: "Healthcare management system with advanced analytics features",
-        image: "/placeholder.svg",
-        techs: [
-            { title: "MaterialDesignM1", url: "https://m1.material.io/" },
-            { title: "Angular", url: "https://angular.dev/" },
-            { title: "NestJS", url: "https://nestjs.com/" },
-            { title: "TypeORM", url: "https://typeorm.io/" },
-            { title: "PostgreSQL", url: "https://www.postgresql.org/" },
-            { title: "CDK", url: "https://aws.amazon.com/cdk/" },
-        ],
-        role: "Full-Stack Developer",
-        year: "2023-2024",
-        company: "VF&Soft",
-        companyUrl: "https://vf-soft.com"
-    },
     // {
-    //     id: 7,
+    //     id: 6,
+    //     title: "CortexAnalytics App",
+    //     description: "Healthcare management system with advanced analytics features",
+    //     image: "/placeholder.svg",
+    //     techs: [
+    //         { title: "MaterialDesignM1", url: "https://m1.material.io/" },
+    //         { title: "Angular", url: "https://angular.dev/" },
+    //         { title: "NestJS", url: "https://nestjs.com/" },
+    //         { title: "TypeORM", url: "https://typeorm.io/" },
+    //         { title: "PostgreSQL", url: "https://www.postgresql.org/" },
+    //         { title: "CDK", url: "https://aws.amazon.com/cdk/" },
+    //     ],
+    //     role: "Full-Stack Developer",
+    //     year: "2023-2024",
+    //     company: "VF&Soft",
+    //     companyUrl: "https://vf-soft.com"
+    // },
+    // {
+    //     id: 8,
     //     title: "Car-Keeper",
     //     description: "Mobile application for managing car collections",
     //     image: "/placeholder.svg",
@@ -141,7 +160,7 @@ const projects = [
     //     companyUrl: "https://vf-soft.com"
     // },
     // {
-    //     id: 8,
+    //     id: 9,
     //     title: "VPlus",
     //     description: "E-commerce website for selling groceries",
     //     image: "/placeholder.svg",
@@ -149,17 +168,6 @@ const projects = [
     //     role: "Full-Stack Developer",
     //     year: "2020",
     //     company: "Independent Contractor",
-    // },
-    // {
-    //     id: 9,
-    //     title: "Cortex-Knowledge",
-    //     description: "Document management system with payment processing",
-    //     image: "/placeholder.svg",
-    //     techs: ["Docker", "Node.js", "Express.js", "Stripe"],
-    //     role: "DevOps & Back-End Developer",
-    //     year: "2019-2020",
-    //     company: "VF&Soft",
-    //     companyUrl: "https://vf-soft.com"
     // },
 ];
 ---
@@ -248,7 +256,7 @@ const projects = [
                             </p>
                             <div class="flex flex-wrap gap-2">
                                 {project.techs.map((tech) => (
-                                    <a href={tech.url} class="inline-flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.95] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 h-6 gap-1.5 rounded-md px-2 select-none border border-input bg-none hover:bg-accent hover:text-accent-foreground">
+                                    <a href={tech.url} target="_blank" class="inline-flex items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 active:scale-[0.95] disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 h-6 gap-1.5 rounded-md px-2 select-none border border-input bg-none hover:bg-accent hover:text-accent-foreground">
                                         {tech.title}
                                     </a>
                                 ))}
